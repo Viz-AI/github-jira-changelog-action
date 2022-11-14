@@ -34,8 +34,8 @@ const config = {
 
 const template = `
 <% tickets.all.forEach((ticket) => { %>
-- [<%= ticket.key %>](<%= jira.baseUrl + '/browse/' + ticket.key %>) (<%= ticket.fields.issuetype.name %>)
-  <%= ticket.fields.summary -%>
+- <%= ticket.fields.summary -%>
+  [<%= ticket.key %>](<%= jira.baseUrl + '/browse/' + ticket.key %>) (<%= ticket.fields.issuetype.name %>)
 <% }); -%>
 <% if (!tickets.all.length) {%> ~ None ~ <% } %>
 `;
