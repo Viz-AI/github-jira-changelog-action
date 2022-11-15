@@ -45,6 +45,10 @@ inputs:
         description: 'Template for jira tickets changlog'
         default: ''
         required: false
+    fix_version:
+        description: 'An existing fix version on jira, tickets will be added this fix version'
+        default: ''
+        requires: false
 outputs:
     changelog_message:
         description: 'Generated changelog entry'

@@ -106,7 +106,7 @@ async function main() {
     console.log(commitLogs.map(x => x.summary));
 
     console.log('Generating Jira changelog from commit logs');
-    const changelog = await jira.generate(commitLogs);
+    const changelog = await jira.generate(commitLogs, core.getInput('fix_version'));
 
     console.log('Generating changelog message');
     const data = await transformCommitLogs(config, changelog);
