@@ -102,8 +102,8 @@ async function main() {
     console.log(`Getting range ${range.from}...${range.to} commit logs`);
     const commitLogs = await source.getCommitLogs('./', range);
 
-    console.log('Found following commit logs:');
-    console.log(commitLogs);
+    console.log('Found following commit logs (showing summary only):');
+    console.log(commitLogs.map(x => x.summary));
 
     console.log('Generating Jira changelog from commit logs');
     const changelog = await jira.generate(commitLogs);
@@ -115,8 +115,8 @@ async function main() {
       baseUrl: config.jira.baseUrl,
     };
     data.includePendingApprovalSection = core.getInput('include_pending_approval_section') === 'true';
-
-    const changelogMessage = ejs.render(template, data);
+    let userTicketsTemplate = core.getInput('tickets_template')
+    const changelogMessage = ejs.render(userTicketsTemplate ? userTicketsTemplate : template, data);
 
     core.setOutput('changelog_message', changelogMessage);
 

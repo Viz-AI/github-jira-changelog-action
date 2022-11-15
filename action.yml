@@ -41,6 +41,10 @@ inputs:
         description: 'Boolean flag indicating whether to include or exclude `Pending Approval` section'
         default: 'true'
         required: false
+    tickets_template:
+        description: 'Template for jira tickets changlog'
+        default: ''
+        required: false
 outputs:
     changelog_message:
         description: 'Generated changelog entry'
