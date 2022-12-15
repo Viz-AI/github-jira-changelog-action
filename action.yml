@@ -49,6 +49,10 @@ inputs:
         description: 'An existing fix version on jira, tickets will be added this fix version'
         default: ''
         requires: false
+    excluded_tickets:
+        description: 'Comma separated list of tickets to exclude from changelog'
+        default: ''
+        required: false
 outputs:
     changelog_message:
         description: 'Generated changelog entry'
