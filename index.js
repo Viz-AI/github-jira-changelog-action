@@ -19,7 +19,7 @@ const config = {
     approvalStatus: core.getInput('approval_statuses').split(",").filter(x => x !== ""),
     excludeIssueTypes: core.getInput('exclude_issue_types').split(",").filter(x => x !== ""),
     approvalStatus: ['Done', 'Closed', 'Accepted'],
-    excludeIssueTypes: ['Sub-task'],
+    excludeIssueTypes: [],
     includeIssueTypes: [],
   },
   sourceControl: {
