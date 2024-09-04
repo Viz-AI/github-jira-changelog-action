@@ -20,11 +20,14 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
-    "ejs": "^3.0.1",
+    "ejs": "^3.1.10",
     "haikunator": "^2.1.2",
     "html-entities": "^1.2.1",
-    "jira-changelog": "^1.5.0",
+    "jira-changelog": "^2.2.0",
     "lodash": "^4.17.15",
-    "regexp-from-string": "^0.1.0"
+    "regexp-from-string": "^0.1.0",
+    "request": "^2.88.2",
+    "simple-git": "^3.26.0",
+    "tough-cookie": "^4.1.4"
   }
 }
