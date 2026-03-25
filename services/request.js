@@ -3,13 +3,18 @@
 const axios = require('axios');
 
 module.exports = async ({
-  url, method = 'get', data = {}, auth,
+  url, method = 'get', data = {}, auth, headers = {},
 }) => {
   const { data: result } = await axios({
     url,
     method,
     data,
     auth,
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      ...headers,
+    },
   }).catch((error) => {
     if (error.response) {
       // The request was made and the server responded with a status code

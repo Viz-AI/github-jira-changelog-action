@@ -29,5 +29,5 @@ outputs:
     message:
         description: 'List of tickets resolved'
 runs:
-    using: 'node16'
+    using: 'node20'
     main: 'index.js'
